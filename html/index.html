@@ -8,14 +8,21 @@
         <h2>eelテスト</h2>
         検索ワード<input id="textSome" type="text">
         <button id="search">検索</button><br>
-        <textarea rows="4" cols="40"></textarea>
+        <textarea id="innerHTMLtext" rows="4" cols="40"></textarea>
 
         <script type="text/javascript" src="./eel.js"></script>
         <script>
             search.addEventListener('click', () => {
                 if (document.getElementById("textSome").value === '') {
                     alert("入力してください");
-                };
+                }else{
+                    eel.expose(kimetsu_search)
+                    function kimetsu_search() {
+                        var val = eel.kimetsu_search(document.getElementById("textSome").value);
+                        innerHTMLtext.innerHTML = val
+                    }
+                }
+               
             })
 
             eel.expose(view_log_js)
