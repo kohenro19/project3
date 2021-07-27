@@ -12,21 +12,16 @@
 
         <script type="text/javascript" src="./eel.js"></script>
         <script>
-            search.addEventListener('click', () => {
+           search.addEventListener('click', async () => {
                 if (document.getElementById("textSome").value === '') {
                     alert("入力してください");
-                }else{
-                    eel.expose(kimetsu_search)
-                    function kimetsu_search() {
-                        var val = eel.kimetsu_search(document.getElementById("textSome").value);
-                        innerHTMLtext.innerHTML = val
-                    }
+                } else {
+                    eel.kimetsu_search(document.getElementById("textSome").value);
                 }
-               
             })
-
             eel.expose(view_log_js)
             function view_log_js(text){
+                innerHTMLtext.value += text;
             }
         </script>
     </body>
