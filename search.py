@@ -4,15 +4,16 @@ import eel
 ### デスクトップアプリ作成課題
 def kimetsu_search(word):
     # 検索対象取得
-    df=pd.read_csv("./source.csv")
+    df=pd.read_csv(eel.save_csv_js)
     source=list(df["name"])
-
+	
     # 検索
     if word in source:
-        return "『{}』はあります".format(word)
+        eel.view_log_js("『{}』はありません".format(word))
 
     else:
-        # print("『{}』はありません".format(word))
+        eel.view_log_js("『{}』はありません".format(word))
+        
 
         # 追加
         #add_flg=input("追加登録しますか？(0:しない 1:する)　＞＞　")
@@ -25,4 +26,3 @@ def kimetsu_search(word):
     df.to_csv("./source.csv",encoding="utf_8-sig")
     print(source)
 
-    return "『{}』はありません".format(word)
