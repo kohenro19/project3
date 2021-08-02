@@ -4,7 +4,7 @@ import eel
 ### デスクトップアプリ作成課題
 def kimetsu_search(word):
     # 検索対象取得
-    df=pd.read_csv(eel.save_csv_js)
+    df=pd.read_csv(eel.save_csv_js())
     source=list(df["name"])
 	
     # 検索
