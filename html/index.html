@@ -17,18 +17,15 @@
                 if (document.getElementById("textSome").value === '') {
                     alert("入力してください");
                 } else {
-                    eel.kimetsu_search(document.getElementById("textSome").value);
+                    element = document.getElementById('savePlace');
+                    eel.kimetsu_search(document.getElementById("textSome").value, document.getElementById("savePlace").value);
                 }
             })
             eel.expose(view_log_js);
             function view_log_js(text){
                 innerHTMLtext.value += text;
             }
-            eel.expose(save_csv_js);
-            function save_csv_js() {
-                element = document.getElementById('savePlace');
-                return element.value;
-}               
+               
         </script>
     </body>
 </html>
